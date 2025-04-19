@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "HR Dashboard";
+}
+
+<h1 class="text-center">HR Dashboard</h1>
+
+<div class="container mt-4">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Instructors</h5>
+                    <p class="card-text">Manage Instructors in the system</p>
+                    <a asp-controller="HR" asp-action="Instructors" class="btn btn-primary">Manage Instructors</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="card text-center shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Students</h5>
+                    <p class="card-text">Manage Students in the System</p>
+                    <a asp-controller="HR" asp-action="Students" class="btn btn-primary">Manage Students</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

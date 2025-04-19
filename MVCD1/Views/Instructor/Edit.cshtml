@@ -1,0 +1,72 @@
+﻿@model Instructors;
+@{
+    ViewBag.Action = "Edit";
+}
+<partial name="_NewAndEditPartial" model="Model"/>
+
+@section scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+}
+
+@*<form method="post" action="/Instructor/Edit">
+    <input name="Id" value="@Model?.Id" type="number" class="form-control" id="id" hidden>
+
+    <div class="form-group">
+        <label>First Name</label>
+        <input name="FName" value="@Model?.FName" type="text" class="form-control" id="fname">
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input name="LName" value="@Model?.LName" type="text" class="form-control" id="lname">
+    </div>
+    <div class="form-group">
+        <label>Salary</label>
+        <input name="Salary" value="@Model?.Salary" type="number" class="form-control" id="salary">
+    </div>
+    <div class="form-group">
+        <label>Image</label>
+        <input name="Image" value="@Model?.Image" type="text" class="form-control" id="image">
+    </div>
+    <div class="form-group">
+        <label>Age</label>
+        <input name="Age" value="@Model?.Age" type="number" class="form-control" id="age">
+    </div>
+    <div class="form-group">
+        <label>Hire Date</label>
+        <input name="HireDate" value="@Model?.HireDate.ToString("yyyy-MM-dd")" type="date" class="form-control" id="date">
+    </div>
+    <div class="form-group">
+        <label>Departments</label>
+        <select name="DepartmentId" class="form-control">
+            @foreach (Departments departments in ViewBag.depts)
+            {
+                @if(Model.DepartmentId == departments.Id)
+                {
+                    <option value="@departments.Id" selected>
+                        @departments.DepartmentName
+                    </option>
+                }
+                else
+                {
+                    <option value="@departments.Id">
+                        @departments.DepartmentName
+                    </option>
+                }
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Courses</label><br>
+        @foreach (var course in ViewBag.Courses)
+        {
+            <input type="checkbox" name="courses" value="@course.Id"
+            @(Model?.courses != null && Model.courses.Any(c => c.Id == course.Id) ? "checked" : "") />
+            @course.CourseName <br />
+        }
+
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>*@

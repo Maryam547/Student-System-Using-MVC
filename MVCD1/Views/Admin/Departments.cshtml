@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Departments>
+
+<h2>Departments</h2>
+<a asp-action="AddDepartment" class="btn btn-success">Add New Department</a>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Location</th>
+        <th>ForDelete</th>
+    </tr>
+    @foreach (var dept in Model)
+    {
+        <tr>
+            <td>@dept.DepartmentName</td>
+            <td>@dept.DepartmentDescription</td>
+            <td>@dept.Location</td>
+            <td>
+                <a asp-action="DeleteDepartment" asp-route-id="@dept.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

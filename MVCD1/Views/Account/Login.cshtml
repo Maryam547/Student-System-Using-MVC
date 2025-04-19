@@ -1,0 +1,44 @@
+﻿@model MVCD2.ViewModel.LoginViewModel
+
+<h2>Login</h2>
+
+<form asp-action="Login">
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div>
+        <input asp-for="RememberMe" />
+        <label asp-for="RememberMe"></label>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Login</button>
+    @* <a asp-controller="Account" asp-action="ExternalLogin" *@
+    @*    asp-route-provider="Google" *@
+    @*    asp-route-returnUrl="@Context.Request.Path" *@
+    @*    class="btn btn-danger"> *@
+    @*     <i class="fab fa-google"></i> Login with Google *@
+    @* </a> *@
+
+    @* <form asp-controller="Account" asp-action="ExternalLogin" method="post"> *@
+    @*     <input type="hidden" name="provider" value="Google" /> *@
+    @*     <button type="submit" class="btn btn-danger">Login with Google</button> *@
+
+    @*     <input type="hidden" name="provider" value="Facebook" /> *@
+    @*     <button type="submit" class="btn btn-primary">Login with Facebook</button> *@
+    @* </form> *@
+    @* <form asp-controller="Account" asp-action="ExternalLogin" method="post"> *@
+       
+    @* </form> *@
+
+    @* <a asp-action="ExternalLogin" asp-route-provider="Google" class="btn btn-danger">Login with Google</a> *@
+    @* <a asp-action="ExternalLogin" asp-route-provider="Facebook" class="btn btn-primary">Login with Facebook</a> *@
+
+</form>

@@ -1,0 +1,19 @@
+﻿<table class="table table-bordered mt-4">
+    <thead>
+        <tr>
+            <th>Course Name</th>
+            <th>Actions</th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@course.CourseName</td>
+                <td>
+                    <a asp-action="CourseDetails" asp-route-id="@course.Id" class="btn btn-info">View Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

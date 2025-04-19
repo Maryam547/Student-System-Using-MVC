@@ -1,0 +1,44 @@
+﻿@model MVCD2.Models.Courses
+
+<h2>Add New Course</h2>
+
+<form asp-action="AddCourse" method="post">
+    <div class="form-group">
+        <label>Course Name</label>
+        <input asp-for="CourseName" class="form-control" />
+        <span asp-validation-for="CourseName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Topic</label>
+        <input asp-for="Topic" class="form-control" />
+        <span asp-validation-for="Topic" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Minimum Degree</label>
+        <input asp-for="MinDegree" type="number" class="form-control" />
+        <span asp-validation-for="MinDegree" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Total Degree</label>
+        <input asp-for="TotalDegree" type="number" class="form-control" />
+        <span asp-validation-for="TotalDegree" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Instructor</label>
+        <select asp-for="InstructorId" asp-items="ViewBag.Instructors" class="form-control">
+            <option value="">-- Select Instructor --</option>
+        </select>
+        <span asp-validation-for="InstructorId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Course</button>
+</form>
+@section scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+}

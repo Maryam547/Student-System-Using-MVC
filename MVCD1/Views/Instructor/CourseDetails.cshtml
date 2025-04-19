@@ -1,0 +1,31 @@
+﻿@model MVCD2.Models.Courses;
+
+
+<h2>Course Details</h2>
+<table class="table">
+    <tr>
+        <th>Course Name</th>
+        <td>@Model.CourseName</td>
+    </tr>
+    <tr>
+        <th>Topic</th>
+        <td>@Model.Topic</td>
+    </tr>
+    <tr>
+        <th>Minimum Degree</th>
+        <td>@Model.MinDegree</td>
+    </tr>
+    <tr>
+        <th>Total Degree</th>
+        <td>@Model.TotalDegree</td>
+    </tr>
+    <tr>
+    <tr>
+        <th>Instructor Name</th>
+        <td>@(Model.Instructors != null ? Model.Instructors.FName : "No Instructor Assigned")</td>
+    </tr>
+
+    </tr>
+</table>
+
+<a href="@Url.Action("Courses", "Instructor")" class="btn btn-primary">Back to Courses</a>

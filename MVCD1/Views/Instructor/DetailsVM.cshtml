@@ -1,0 +1,27 @@
+﻿@using MVCD2.ViewModel
+@model ViewInstructorsAndHisCourses
+<div class="card" style="width: 18rem;">
+    <img src="/Images/@Model.Image" class="card-img-top" alt="/Images/@Model.Image">
+    <div class="card-body">
+        @* <h5 class="card-title">@Model.Id</h5> *@
+        <p class="card-text">@Model.FullName</p>
+        <p class="card-text">@Model.HD</p>
+        @if (Model.Courses.Any())
+        {
+            <p class="card-text"><strong>Courses:</strong></p>
+            <ul>
+                @for (int i = 0; i < Model.Courses.Count; i++)
+                {
+                    <li>@Model.Courses[i]</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p class="card-text">No courses available.</p>
+        }
+
+
+        @* <a href="G:\Full Stack Using .Net ITI\Mon4\Week1\Day61\Day2\MVCD1\MVCD1\Views\Student\Index.cshtml" class="btn btn-primary">Go somewhere</a> *@
+    </div>
+</div>

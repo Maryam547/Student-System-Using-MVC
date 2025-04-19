@@ -1,0 +1,60 @@
+﻿
+@model MVCD2.Models.Instructors
+
+@{
+    ViewData["Title"] = "Edit Instructor";
+}
+
+<h2 class="text-center mb-4">Edit Instructor</h2>
+
+<div class="container">
+    <form asp-action="EditInstructor" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label asp-for="FName" class="form-label">First Name</label>
+            <input asp-for="FName" class="form-control" required />
+            <span asp-validation-for="FName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="LName" class="form-label">Last Name</label>
+            <input asp-for="LName" class="form-control" required />
+            <span asp-validation-for="LName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Salary" class="form-label">Salary</label>
+            <input asp-for="Salary" class="form-control" type="number" step="0.01" required />
+            <span asp-validation-for="Salary" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Age" class="form-label">Age</label>
+            <input asp-for="Age" class="form-control" type="number" min="18" required />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Image" class="form-label">Image</label>
+            <input asp-for="Image" class="form-control" required />
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="HireDate" class="form-label">Hire Date</label>
+            <input asp-for="HireDate" class="form-control" type="date" required />
+            <span asp-validation-for="HireDate" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DepartmentId" class="form-label">Department</label>
+            <select asp-for="DepartmentId" class="form-select" asp-items="ViewBag.Departments">
+                <option value="">Select Department</option>
+            </select>
+            <span asp-validation-for="DepartmentId" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+﻿@model students
+<div class="card" style="width: 18rem;">
+    <img src="/Images/@Model.Image" class="card-img-top" alt="/Images/@Model.Image">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Id</h5>
+        <p class="card-text">@Model.Name</p>
+        <p class="card-text">@Model.Age</p>
+        <p class="card-text">@Model.Address</p>
+        @if (Model.Course_Students != null && Model.Course_Students.Any())
+        {
+            <p class="card-text"><strong>Courses & Degrees:</strong></p>
+            <ul>
+                @foreach (var cs in Model.Course_Students)
+                {
+                    var color = cs.Degree >= 50 ? "green" : "red";
+                    <li style ="color: @color;">@cs.Course.CourseName -  @cs.Degree</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p class="card-text">No courses available.</p>
+        }
+
+        @* <p class="card-text">@Model</p> *@
+
+        @* <a href="G:\Full Stack Using .Net ITI\Mon4\Week1\Day61\Day2\MVCD1\MVCD1\Views\Student\Index.cshtml" class="btn btn-primary">Go somewhere</a> *@
+    </div>
+</div>
